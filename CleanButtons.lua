@@ -1,26 +1,26 @@
 -- Removes button glow effects from action bars
 
-local function hideGlow(button)
-    if not button then return end
+local function hideActionButtonGlowEffect(actionButton)
+    if not actionButton then return end
 
-    local rotation = button.AssistedCombatRotationFrame
-    if rotation and rotation.SpellActivationAlert then
-        rotation.SpellActivationAlert:Hide()
+    local assistedCombatRotationFrame = actionButton.AssistedCombatRotationFrame
+    if assistedCombatRotationFrame and assistedCombatRotationFrame.SpellActivationAlert then
+        assistedCombatRotationFrame.SpellActivationAlert:Hide()
     end
 
-    if button.overlay then
-        button.overlay:Hide()
+    if actionButton.overlay then
+        actionButton.overlay:Hide()
     end
 
-    if button.SpellActivationAlert then
-        button.SpellActivationAlert:Hide()
+    if actionButton.SpellActivationAlert then
+        actionButton.SpellActivationAlert:Hide()
     end
 end
 
 if ActionButtonSpellAlertManager then
-    hooksecurefunc(ActionButtonSpellAlertManager, "ShowAlert", function(_, button)
-        hideGlow(button)
+    hooksecurefunc(ActionButtonSpellAlertManager, "ShowAlert", function(_, actionButton)
+        hideActionButtonGlowEffect(actionButton)
     end)
 else
-    hooksecurefunc("ActionButton_ShowOverlayGlow", hideGlow)
+    hooksecurefunc("ActionButton_ShowOverlayGlow", hideActionButtonGlowEffect)
 end
