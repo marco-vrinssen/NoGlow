@@ -1,7 +1,7 @@
 ## Interface: 110200
-## Title: No Glow
+## Title: Hide Button Glow
 ## Notes: Removes button glow effects from action bars
 ## Author: MIYANKO
 ## Version: 1.0.0
 
-NoGlow.lua
+HideButtonGlow.lua

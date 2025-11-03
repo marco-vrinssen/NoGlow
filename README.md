@@ -1,4 +1,4 @@
-# No Glow
+# Hide Button Glow
 
 World of Warcraft Retail addon that removes all button glow effects from action bars.
 
